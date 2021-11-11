@@ -1,4 +1,5 @@
 import ToolbarItem from "./ToolbarItem";
+import { v1 as uuidv1 } from "uuid";
 
 function Toolbar(props) {
   const { filters, selected, onSelectFilter } = props;
@@ -6,7 +7,7 @@ function Toolbar(props) {
     <div className="toolbar">
       {filters.map((filter) => (
         <ToolbarItem
-          key={filter}
+          key={uuidv1()}
           filter={filter}
           selected={selected}
           onSelectFilter={onSelectFilter}
